@@ -1,4 +1,5 @@
 #!/bin/bash
+web_root='/web'
 
 echo "Installing nginx"
 apt-get install nginx
@@ -22,8 +23,8 @@ echo "<!doctype html><html><body><h1>Hello</h1></body></html>" > $web_root/defau
 usermod -aG www-data tomcat7
 
 #set the web directory permissions
-chown -R root:www-data /web
-chmod -R 750 /web
+chown -R root:www-data $web_root
+chmod -R 750 $web_root
 
 
 echo "Adding Default and Example Site to nginx"
