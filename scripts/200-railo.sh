@@ -1,3 +1,4 @@
+#!/bin/bash
 
 railo="http://www.getrailo.org/railo/remote/download42/$RAILO_VERSION/custom/all/railo-$RAILO_VERSION-jars.tar.gz"
 railo_folder="railo-$RAILO_VERSION-jars"
