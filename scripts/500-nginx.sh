@@ -6,6 +6,7 @@ apt-get install nginx
 echo "Adding Railo nginx configuration files"
 cp etc/nginx/conf.d/railo-global.conf /etc/nginx/conf.d/railo-global.conf
 cp etc/nginx/railo.conf /etc/nginx/railo.conf
+cp etc/nginx/railo-proxy.conf /etc/nginx/railo-proxy.conf
 
 echo "Creating web root and default sites here: " $web_root
 mkdir $web_root
