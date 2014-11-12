@@ -1,5 +1,5 @@
 #!/bin/bash
-web_root='/web'
+web_root="/web"
 
 echo "Installing nginx"
 apt-get install nginx
