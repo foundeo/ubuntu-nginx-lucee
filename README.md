@@ -1,7 +1,7 @@
 ubuntu-nginx-railo
 ==================
 
-Script for standing up a Railo server using nginx and Tomcat on Ubuntu. Uses the
+A set of bash scripts for standing up a Railo server using nginx and Tomcat on Ubuntu. Uses the
 Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat7`
 
 What does it do?
