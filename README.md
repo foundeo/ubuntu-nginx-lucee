@@ -19,10 +19,8 @@ How do I run it?
 ----------------
 
 1. **Download Oracle JVM** - Vist [java.oracle.com](http://java.oracle.com/) to download the latest server-jre
-2. **Downlaod this repository** 
-	curl -Lo /root/ubuntu-nginx-railo.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-railo/tarball/master
-3. **Extract repository** - 
-	tar -xzvf /root/ubuntu-nginx-railo.tar.gz
+2. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-railo.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-railo/tarball/master`
+3. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-railo.tar.gz`
 4. **Edit the `install.sh`** - Change any configuration options such as the Railo Version or JVM version.
 5. **Copy jvm** - make sure the jvm you downloaded from oracle is located in the folder that contains install.sh, eg `/root/foundeo-ubuntu-nginx-railo-abcdefg/`
 6. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
