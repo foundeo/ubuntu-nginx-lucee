@@ -48,7 +48,7 @@ By default nginx on Ubuntu looks in the folder `/etc/nginx/sites-enabled/` for c
 		include railo.conf;
 	}
 
-You may also want to break logging out into its own file, like this:
+You may also want to break logging for this site out into its own file, like this:
 
 	server {
 		listen 80;
@@ -57,6 +57,14 @@ You may also want to break logging out into its own file, like this:
 		access_log /var/log/nginx/me.example.com.access.log;
 		error_log /var/log/nginx/me.example.com.error.log;
 		include railo.conf;
+	}
+
+If you don't need Railo/CFML for a given site, simply omit the `include railo.conf;` line, like this:
+
+	server {
+		listen 80;
+		server_name img.example.com;
+		root /web/img.example.com/wwwroot/;
 	}
 
 For more information on configuring nginx see the [nginx Wiki](http://wiki.nginx.org/Configuration)
