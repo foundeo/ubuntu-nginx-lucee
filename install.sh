@@ -1,10 +1,12 @@
 #!/bin/bash
 
 #configuration options
-export RAILO_VERSION="4.2.1.008"
+export LUCEE_VERSION="4.5.1.022"
 export JVM_MAX_HEAP_SIZE="512m"
-export JVM_FILE="server-jre-8u25-linux-x64.gz"
-export JVM_VERSION="1.8.0_25"
+export JVM_FILE="server-jre-8u51-linux-x64.gz"
+export JVM_VERSION="1.8.0_51"
+#note if you change INSTALL_DIR also need to update etc/tomcat7/catalina.properties
+export INSTALL_DIR="/opt/lucee"
 
 #root permission check
 if [ "$(whoami)" != "root" ]; then
@@ -26,8 +28,8 @@ chmod u+x scripts/*.sh
 ./scripts/100-ubuntu-update.sh
 separator
 
-#download railo
-./scripts/200-railo.sh
+#download lucee
+./scripts/200-lucee.sh
 separator
 
 #install tomcat
@@ -44,4 +46,4 @@ separator
 
 echo "Setup Complete"
 separator
-echo "GO SET YOUR RAILO PASSWORDS: http://localhost/railo-context/admin/server.cfm"
+echo "GO SET YOUR LUCEE PASSWORDS: http://localhost/lucee/admin/server.cfm"

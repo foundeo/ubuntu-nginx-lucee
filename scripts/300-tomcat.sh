@@ -26,19 +26,19 @@ cp etc/tomcat7/catalina.properties /etc/tomcat7/
 
 cp /etc/default/tomcat7 backup/etc/default/tomcat7
 
-echo "Installing Railo Java Agent into Tomcat"
-echo $'\nJAVA_OPTS="${JAVA_OPTS} -javaagent:/opt/railo/current/railo-inst.jar"' >> /etc/default/tomcat7
+echo "Installing Lucee Java Agent into Tomcat"
+echo $'\nJAVA_OPTS="${JAVA_OPTS} -javaagent:$INSTALL_DIR/current/lucee-inst.jar"' >> /etc/default/tomcat7
 
 echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration"
 if [ -f lib/mod_cfml-valve_v1.0.14.jar ]; then
-  cp lib/mod_cfml-valve_v1.0.14.jar /opt/railo/current/
+  cp lib/mod_cfml-valve_v1.0.14.jar $INSTALL_DIR/current/
 else
-  curl -o /opt/railo/current/mod_cfml-valve_v1.0.14.jar http://download.modcfml.org/downloader.cfm/id/24/file/mod_cfml-valve_v1.0.14.jar
+  curl -o $INSTALL_DIR/current/mod_cfml-valve_v1.0.14.jar http://download.modcfml.org/downloader.cfm/id/24/file/mod_cfml-valve_v1.0.14.jar
 fi
-   
+
 echo "Setting Permissions on Railo Folders"
-chown -R tomcat7:tomcat7 /opt/railo
-chmod -R 750 /opt/railo
+chown -R tomcat7:tomcat7 $INSTALL_DIR
+chmod -R 750 $INSTALL_DIR
 
 echo "Setting JVM Max Heap Size to " $JVM_MAX_HEAP_SIZE
 

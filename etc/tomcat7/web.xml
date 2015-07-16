@@ -39,39 +39,39 @@
     <!-- ===================================================================== -->
     <!-- Railo CFML Servlet - this is the main Railo servlet                   -->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <servlet id="Railo">
-      <description>Railo CFML Engine</description>
+    <servlet id="Lucee">
+      <description>Lucee CFML Engine</description>
       <servlet-name>CFMLServlet</servlet-name>
-      <servlet-class>railo.loader.servlet.CFMLServlet</servlet-class>
+      <servlet-class>lucee.loader.servlet.CFMLServlet</servlet-class>
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      <!-- to specify the location of the Railo Server config and libraries,   -->
+      <!-- to specify the location of the Lucee Server config and libraries,   -->
       <!-- uncomment the init-param below.  make sure that the param-value     -->
-      <!-- points to a valid folder, and that the process that runs Railo has  -->
+      <!-- points to a valid folder, and that the process that runs Lucee has  -->
       <!-- write permissions to that folder.  leave commented for defaults.    -->
-      
+
       <init-param>
-        <param-name>railo-server-directory</param-name>
-        <param-value>/opt/railo/config/server/</param-value>
-        <description>Railo Server configuration directory (for Server-wide configurations, settings, and libraries)</description>
+        <param-name>lucee-server-directory</param-name>
+        <param-value>/opt/lucee/config/server/</param-value>
+        <description>Lucee Server configuration directory (for Server-wide configurations, settings, and libraries)</description>
       </init-param>
-      
+
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!-- to specify the location of the Web Contexts' config and libraries,  -->
       <!-- uncomment the init-param below.  make sure that the param-value     -->
-      <!-- points to a valid folder, and that the process that runs Railo has  -->
+      <!-- points to a valid folder, and that the process that runs Lucee has  -->
       <!-- write permissions to that folder.  the {web-context-label} can be   -->
-      <!-- set in Railo Server Admin homepage.  leave commented for defaults.  -->
-      
+      <!-- set in Lucee Server Admin homepage.  leave commented for defaults.  -->
+
       <init-param>
-        <param-name>railo-web-directory</param-name>
-        <param-value>/opt/railo/config/web/{web-context-label}/</param-value>
-        <description>Railo Web Directory (for Website-specific configurations, settings, and libraries)</description>
+        <param-name>lucee-web-directory</param-name>
+        <param-value>/opt/lucee/config/web/{web-context-label}/</param-value>
+        <description>Lucee Web Directory (for Website-specific configurations, settings, and libraries)</description>
       </init-param>
-      
+
       <load-on-startup>1</load-on-startup>
     </servlet>
 
-  
+
 
 
 
@@ -83,15 +83,15 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- The mappings for the JSP servlet 
+    <!-- The mappings for the JSP servlet
     <servlet-mapping>
         <servlet-name>jsp</servlet-name>
         <url-pattern>*.jsp</url-pattern>
     </servlet-mapping>
     -->
 
-  
-    <!-- Mappings for the Railo servlet -->
+
+    <!-- Mappings for the Lucee servlet -->
     <servlet-mapping>
         <servlet-name>CFMLServlet</servlet-name>
         <url-pattern>*.cfm</url-pattern>
@@ -110,7 +110,7 @@
 
 
   <!-- ===================== Default MIME Type Mappings =================== -->
-  
+
     <mime-mapping>
         <extension>pdf</extension>
         <mime-type>application/pdf</mime-type>
@@ -140,12 +140,12 @@
         <extension>jpg</extension>
         <mime-type>image/jpeg</mime-type>
     </mime-mapping>
-    
+
     <mime-mapping>
         <extension>js</extension>
         <mime-type>application/javascript</mime-type>
     </mime-mapping>
-   
+
     <mime-mapping>
         <extension>json</extension>
         <mime-type>application/json</mime-type>
@@ -155,14 +155,14 @@
         <extension>css</extension>
         <mime-type>text/css</mime-type>
     </mime-mapping>
-    
+
     <mime-mapping>
         <extension>csv</extension>
         <mime-type>text/csv</mime-type>
     </mime-mapping>
 
   <!-- ==================== Default Welcome File List ===================== -->
-  
+
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
@@ -170,4 +170,3 @@
     </welcome-file-list>
 
 </web-app>
-
