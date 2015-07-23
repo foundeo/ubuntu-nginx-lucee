@@ -33,7 +33,7 @@ echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration"
 if [ -f lib/mod_cfml-valve_v1.1.04.jar ]; then
   cp lib/mod_cfml-valve_v1.1.04.jar /opt/lucee/current/
 else
-  curl -o /opt/lucee/current/mod_cfml-valve_v1.1.04.jar https://github.com/utdream/mod_cfml/raw/master/java/mod_cfml-valve_v1.1.04.jar
+  curl --location -o /opt/lucee/current/mod_cfml-valve_v1.1.04.jar https://raw.githubusercontent.com/utdream/mod_cfml/master/java/mod_cfml-valve_v1.1.04.jar
 fi
 
 if [ ! -f /opt/lucee/modcfml-shared-key.txt ]; then
