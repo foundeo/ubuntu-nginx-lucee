@@ -36,15 +36,14 @@ else
   curl -o /opt/lucee/current/mod_cfml-valve_v1.1.04.jar https://github.com/utdream/mod_cfml/raw/master/java/mod_cfml-valve_v1.1.04.jar
 fi
 
-if [ -f /opt/lucee/modcfml-shared-secret.txt]; then
+if [ ! -f /opt/lucee/modcfml-shared-key.txt ]; then
   echo "Generating Random Shared Secret..."
-  shared_secret = `openssl rand -base64 42`
-  echo $shared_secret > /opt/lucee/modcfml-shared-secret.txt
-else
-  shared_secret = `cat /opt/lucee/modcfml-shared-secret.txt`
+  openssl rand -base64 42 >> /opt/lucee/modcfml-shared-key.txt
 fi
 
-sed -e "s/SHARED-SECRET-HERE/$shared_secret/g" /etc/tomcat7/server.xml > /etc/tomcat7/server.xml
+shared_secret=`cat /opt/lucee/modcfml-shared-key.txt`
+
+sed -e "s/SHARED-KEY-HERE/$shared_secret/g" etc/tomcat7/server.xml > /etc/tomcat7/server.xml
 
 echo "Setting Permissions on Lucee Folders"
 chown -R tomcat7:tomcat7 /opt/lucee
@@ -52,4 +51,4 @@ chmod -R 750 /opt/lucee
 
 echo "Setting JVM Max Heap Size to " $JVM_MAX_HEAP_SIZE
 
-sed -e "s/-Xmx128m/-Xmx$JVM_MAX_HEAP_SIZE/g" /etc/default/tomcat7 > /etc/default/tomcat7
+sed -e "s/-Xmx128m/-Xmx$JVM_MAX_HEAP_SIZE/g" backup/etc/default/tomcat7 > /etc/default/tomcat7

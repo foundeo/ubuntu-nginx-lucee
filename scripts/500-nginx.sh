@@ -6,7 +6,9 @@ apt-get install nginx
 echo "Adding lucee nginx configuration files"
 cp etc/nginx/conf.d/lucee-global.conf /etc/nginx/conf.d/lucee-global.conf
 cp etc/nginx/lucee.conf /etc/nginx/lucee.conf
-cp etc/nginx/lucee-proxy.conf /etc/nginx/lucee-proxy.conf
+echo "Configuring modcfml shared secret in nginx"
+shared_secret=`cat /opt/lucee/modcfml-shared-key.txt`
+sed -e "s/SHARED-KEY-HERE/$shared_secret/g" etc/nginx/lucee-proxy.conf > /etc/nginx/lucee-proxy.conf
 
 echo "Creating web root and default sites here: " $web_root
 mkdir $web_root
@@ -35,9 +37,7 @@ rm /etc/nginx/sites-enabled/default
 echo "Adding our default site"
 ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
-echo "Configuring modcfml shared secret in nginx"
-shared_secret = `cat /opt/lucee/modcfml-shared-key.txt`
-sed -e "s/SHARED-KEY-HERE/$shared_secret/g" /etc/nginx/lucee-proxy.conf > /etc/nginx/lucee-proxy.conf
+
 
 
 service nginx restart
