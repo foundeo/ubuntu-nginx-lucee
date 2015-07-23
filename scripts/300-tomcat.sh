@@ -40,7 +40,7 @@ if [ ! -f /opt/lucee/modcfml-shared-key.txt ]; then
   echo "Generating Random Shared Secret..."
   openssl rand -base64 42 >> /opt/lucee/modcfml-shared-key.txt
   #clean out any base64 chars that might cause a problem
-  sed -i "s/\/\+=//g" /opt/lucee/modcfml-shared-key.txt
+  sed -i "s/[\/\+=]//g" /opt/lucee/modcfml-shared-key.txt
 fi
 
 shared_secret=`cat /opt/lucee/modcfml-shared-key.txt`
