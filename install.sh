@@ -5,8 +5,7 @@ export LUCEE_VERSION="4.5.1.022"
 export JVM_MAX_HEAP_SIZE="512m"
 export JVM_FILE="server-jre-8u51-linux-x64.gz"
 export JVM_VERSION="1.8.0_51"
-#note if you change INSTALL_DIR also need to update etc/tomcat7/catalina.properties
-export INSTALL_DIR="/opt/lucee"
+
 
 #root permission check
 if [ "$(whoami)" != "root" ]; then

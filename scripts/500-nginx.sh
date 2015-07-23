@@ -35,4 +35,9 @@ rm /etc/nginx/sites-enabled/default
 echo "Adding our default site"
 ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
+echo "Configuring modcfml shared secret in nginx"
+shared_secret = `cat /opt/lucee/modcfml-shared-key.txt`
+sed -e "s/SHARED-KEY-HERE/$shared_secret/g" /etc/nginx/lucee-proxy.conf > /etc/nginx/lucee-proxy.conf
+
+
 service nginx restart

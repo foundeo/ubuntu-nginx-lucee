@@ -5,19 +5,19 @@ jar_folder="lucee-$LUCEE_VERSION"
 
 echo "Installing Lucee"
 echo "Downloading Lucee " $LUCEE_VERSION
-mkdir $INSTALL_DIR
-mkdir $INSTALL_DIR/config
-mkdir $INSTALL_DIR/config/server
-mkdir $INSTALL_DIR/config/web
-mkdir $INSTALL_DIR/$jar_folder
-curl -L -k -o $INSTALL_DIR/lucee.zip $jar_url
+mkdir /opt/lucee
+mkdir /opt/lucee/config
+mkdir /opt/lucee/config/server
+mkdir /opt/lucee/config/web
+mkdir /opt/lucee/$jar_folder
+curl -L -k -o /opt/lucee/lucee.zip $jar_url
 
-if [ -f "$INSTALL_DIR/lucee.zip" ]; then
+if [ -f "/opt/lucee/lucee.zip" ]; then
   echo "Download Complete"
 else
   echo "Download of Lucee Failed Exiting..."
   exit 1
 fi
 
-unzip $INSTALL_DIR/lucee.zip -d $INSTALL_DIR/$jar_folder
-ln -s $INSTALL_DIR/$jar_folder $INSTALL_DIR/current
+unzip /opt/lucee/lucee.zip -d /opt/lucee/$jar_folder
+ln -s /opt/lucee/$jar_folder /opt/lucee/current
