@@ -152,8 +152,9 @@
                 waitForContext="5"
                 maxContexts="200"
                 timeBetweenContexts="30000"
+                sharedKey="SHARED-KEY-HERE"
                 />
-       
+
 
       </Host>
 
