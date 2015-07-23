@@ -15,7 +15,7 @@ What does it do?
 
 1. **Updates Ubuntu** - simply runs `apt-get update` and `apt-get upgrade`
 2. **Downloads Lucee** - uses curl to download lucee jars from BitBucket places jars in `/opt/lucee/current/`
-3. **Installs & Configures Tomcat 7** - runs `apt-get install tomcat7` updates the `web.xml` `server.xml` and `catalina.properties` to configure Railo servlets and mod_cfml Valve.
+3. **Installs & Configures Tomcat 7** - runs `apt-get install tomcat7` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.
 4. **Installs Oracle JVM** - if you downloaded a server-jre and specified its path in the config it will extract it under `/opt/lucee/jvm/version` and then create a symbolic link `/opt/lucee/jvm/current` to denote the current jvm version to use. It also edits tomcat config to point to this jvm.
 5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Crates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
 
