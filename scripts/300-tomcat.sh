@@ -30,10 +30,10 @@ echo "Installing Lucee Java Agent into Tomcat"
 echo $'\nJAVA_OPTS="${JAVA_OPTS} -javaagent:/opt/lucee/current/lucee-inst.jar"' > /etc/default/tomcat7
 
 echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration"
-if [ -f lib/mod_cfml-valve_v1.1.04.jar ]; then
-  cp lib/mod_cfml-valve_v1.1.04.jar /opt/lucee/current/
+if [ -f lib/mod_cfml-valve_v1.1.05.jar ]; then
+  cp lib/mod_cfml-valve_v1.1.05.jar /opt/lucee/current/
 else
-  curl --location -o /opt/lucee/current/mod_cfml-valve_v1.1.04.jar https://raw.githubusercontent.com/utdream/mod_cfml/master/java/mod_cfml-valve_v1.1.04.jar
+  curl --location -o /opt/lucee/current/mod_cfml-valve_v1.1.05.jar https://raw.githubusercontent.com/utdream/mod_cfml/master/java/mod_cfml-valve_v1.1.05.jar
 fi
 
 if [ ! -f /opt/lucee/modcfml-shared-key.txt ]; then
@@ -46,6 +46,7 @@ fi
 shared_secret=`cat /opt/lucee/modcfml-shared-key.txt`
 
 sed -i "s/SHARED-KEY-HERE/$shared_secret/g" /etc/tomcat7/server.xml
+
 
 echo "Setting Permissions on Lucee Folders"
 chown -R tomcat7:tomcat7 /opt/lucee
