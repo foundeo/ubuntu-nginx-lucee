@@ -7,7 +7,7 @@ then
   tar -xf $JVM_FILE -C /opt/lucee/jvm
   chown -R root:root /opt/lucee/jvm
   chmod -R 755 /opt/lucee/jvm
-  ln -s /opt/lucee/jvm/jdk$JVM_VERSION /opt/lucee/jvm/current
+  ln -s /opt/lucee/jvm/jre$JVM_VERSION /opt/lucee/jvm/current
   echo $'\nJAVA_HOME="/opt/lucee/jvm/current"' >> /etc/default/tomcat7
 else
   echo "File $JVM_FILE not found, SKIPPING Oracle JVM Installation"
