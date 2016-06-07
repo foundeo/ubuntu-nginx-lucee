@@ -25,10 +25,10 @@ How do I run it?
 ----------------
 
 1. **Download Oracle JVM** - Vist [java.oracle.com](http://java.oracle.com/) to download the latest server-jre
-2. **Downlaod this repository** - `curl -Lo ~/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
-3. **Extract repository** - `tar -xzvf ~/ubuntu-nginx-lucee.tar.gz`
+2. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
+3. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
 4. **Edit the `install.sh`** - Change any configuration options such as the Lucee Version or JVM version.
-5. **Copy jvm** - make sure the jvm you downloaded from oracle is located in the folder that contains install.sh, eg `~/foundeo-ubuntu-nginx-lucee-abcdefg/`
+5. **Copy jvm** - make sure the jvm you downloaded from oracle is located in the folder that contains install.sh, eg `/root/foundeo-ubuntu-nginx-lucee-abcdefg/`
 6. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
 7. **Set Lucee Passwords** - login to `/lucee/admin/server.cfm` and set the server password, and also set the default web context password.
 
