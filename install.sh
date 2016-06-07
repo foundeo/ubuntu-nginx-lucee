@@ -1,11 +1,7 @@
 #!/bin/bash
 
 #configuration options
-export LUCEE_VERSION="4.5.1.022"
-export JVM_MAX_HEAP_SIZE="512m"
-export JVM_FILE="server-jre-8u66-linux-x64.tar.gz"
-export JVM_VERSION="1.8.0_66"
-
+export LUCEE_INSTALLER="http://railo.viviotech.net/downloader.cfm/id/149/file/lucee-5.0.0.219-RC-pl0-linux-x64-installer.run"
 
 #root permission check
 if [ "$(whoami)" != "root" ]; then
@@ -31,12 +27,8 @@ separator
 ./scripts/200-lucee.sh
 separator
 
-#install tomcat
-./scripts/300-tomcat.sh
-separator
-
-#install jvm
-./scripts/400-jvm.sh
+#download commandbox
+./scripts/250-commandbox.sh
 separator
 
 #install nginx
@@ -44,5 +36,3 @@ separator
 separator
 
 echo "Setup Complete"
-separator
-echo "GO SET YOUR LUCEE PASSWORDS: http://localhost/lucee/admin/server.cfm"
