@@ -4,6 +4,8 @@ ubuntu-nginx-lucee
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
 Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat7`
 
+*Important:* This branch is for Lucee 4.5, see the master branch for Lucee 5 support.
+
 Why would I use this instead of the offical Lucee installers?
 -------------------------------------------------------------
 
@@ -25,7 +27,7 @@ How do I run it?
 ----------------
 
 1. **Download Oracle JVM** - Vist [java.oracle.com](http://java.oracle.com/) to download the latest server-jre
-2. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
+2. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/lucee45-ubuntu14`
 3. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
 4. **Edit the `install.sh`** - Change any configuration options such as the Lucee Version or JVM version.
 5. **Copy jvm** - make sure the jvm you downloaded from oracle is located in the folder that contains install.sh, eg `/root/foundeo-ubuntu-nginx-lucee-abcdefg/`
