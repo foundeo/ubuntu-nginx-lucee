@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #configuration options
-export LUCEE_VERSION="4.5.1.022"
+export LUCEE_VERSION="5.0.0.252"
 export JVM_MAX_HEAP_SIZE="512m"
 export JVM_FILE="server-jre-8u66-linux-x64.tar.gz"
 export JVM_VERSION="1.8.0_66"

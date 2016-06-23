@@ -49,6 +49,9 @@ sed -i "s/SHARED-KEY-HERE/$shared_secret/g" /etc/tomcat7/server.xml
 
 
 echo "Setting Permissions on Lucee Folders"
+mkdir /var/lib/tomcat7/lucee-server
+chown -R tomcat7:tomcat7 /var/lib/tomcat7/lucee-server
+chmod -R 750 /var/lib/tomcat7/lucee-server
 chown -R tomcat7:tomcat7 /opt/lucee
 chmod -R 750 /opt/lucee
 
