@@ -4,6 +4,8 @@ ubuntu-nginx-lucee
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
 Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat7`
 
+*Important:* The master branch is now using Lucee 5, for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch. 
+
 Why would I use this instead of the offical Lucee installers?
 -------------------------------------------------------------
 
