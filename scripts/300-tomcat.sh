@@ -26,9 +26,6 @@ cp etc/tomcat7/catalina.properties /etc/tomcat7/
 
 cp /etc/default/tomcat7 backup/etc/default/tomcat7
 
-echo "Installing Lucee Java Agent into Tomcat"
-echo $'\nJAVA_OPTS="${JAVA_OPTS} -javaagent:/opt/lucee/current/lucee-inst.jar"' > /etc/default/tomcat7
-
 echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration"
 if [ -f lib/mod_cfml-valve_v1.1.05.jar ]; then
   cp lib/mod_cfml-valve_v1.1.05.jar /opt/lucee/current/
