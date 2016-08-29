@@ -12,7 +12,7 @@ mkdir /opt/lucee/config/web
 mkdir /opt/lucee/$jar_folder
 curl --location -o /opt/lucee/$jar_folder/lucee.jar $jar_url
 
-if [ -f "/opt/lucee/lucee.zip" ]; then
+if [ -f "/opt/lucee/$jar_folder/lucee.jar" ]; then
   echo "Download Complete"
 else
   echo "Download of Lucee Failed Exiting..."
