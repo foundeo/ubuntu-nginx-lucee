@@ -2,9 +2,9 @@ ubuntu-nginx-lucee
 ==================
 
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
-Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat7`
+Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat8`
 
-*Important:* The master branch is now using Lucee 5, for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch. 
+*Important:* The master branch is now using Lucee 5, for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch.
 
 Why would I use this instead of the offical Lucee installers?
 -------------------------------------------------------------
@@ -17,7 +17,7 @@ What does it do?
 
 1. **Updates Ubuntu** - simply runs `apt-get update` and `apt-get upgrade`
 2. **Downloads Lucee** - uses curl to download lucee jars from BitBucket places jars in `/opt/lucee/current/`
-3. **Installs & Configures Tomcat 7** - runs `apt-get install tomcat7` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.
+3. **Installs & Configures Tomcat 8** - runs `apt-get install tomcat8` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.
 4. **Installs Oracle JVM** - if you downloaded a server-jre and specified its path in the config it will extract it under `/opt/lucee/jvm/version` and then create a symbolic link `/opt/lucee/jvm/current` to denote the current jvm version to use. It also edits tomcat config to point to this jvm.
 5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Crates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
 
@@ -37,7 +37,7 @@ How do I run it?
 Limitations / Known Issues
 --------------------------
 
-* The servlet definitions and mappings (located in `/etc/tomcat7/web.xml`) are slimmed down, so if you need things like REST web services, flash/flex remoting support see the [Railo docs for web.xml config](https://github.com/getrailo/railo/wiki/Configuration:web.xml)
+* The servlet definitions and mappings (located in `/etc/tomcat8/web.xml`) are slimmed down, so if you need things like REST web services, flash/flex remoting support see the [Railo docs for web.xml config](https://github.com/getrailo/railo/wiki/Configuration:web.xml)
 * The `/lucee/` uri is blocked in `/etc/nginx/lucee.conf` you must add in your ip address and restart nginx.
 * There is no uninstall option
 * This script has been tested on Ubuntu 14.04 LTS only
