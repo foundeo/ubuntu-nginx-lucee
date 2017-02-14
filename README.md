@@ -26,13 +26,12 @@ Take a look in the `scripts/` subfolder to see the script for each step.
 How do I run it?
 ----------------
 
-1. **Download Oracle JVM** - Vist [java.oracle.com](http://java.oracle.com/) to download the latest server-jre
-2. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
-3. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
+1. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
+2. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
+3. **Optional: Download Oracle JVM** - Traditionally the Oracle JVM is used to run CFML applications. You can instead use the open source OpenJDK (which the Oracle JVM is based on). The advantage of using OpenJDK is that you can also keep it up to date using `apt-get`. The advantage of the Oracle JVM is that it includes a few Java classes that might be used for image processing (eg the com.sun classes). If you download a JVM from Oracle make sure the jvm you downloaded is located in the folder that contains install.sh, eg `/root/foundeo-ubuntu-nginx-lucee-abcdefg/`. If you skip this step OpenJDK is used instead.
 4. **Edit the `install.sh`** - Change any configuration options such as the Lucee Version or JVM version.
-5. **Copy jvm** - make sure the jvm you downloaded from oracle is located in the folder that contains install.sh, eg `/root/foundeo-ubuntu-nginx-lucee-abcdefg/`
-6. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
-7. **Set Lucee Passwords** - login to `/lucee/admin/server.cfm` and set the server password, and also set the default web context password.
+5. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
+6. **Set Lucee Passwords** - login to `/lucee/admin/server.cfm` and set the server password, and also set the default web context password.
 
 Limitations / Known Issues
 --------------------------
