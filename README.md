@@ -39,7 +39,7 @@ Limitations / Known Issues
 * The servlet definitions and mappings (located in `/etc/tomcat8/web.xml`) are slimmed down, so if you need things like REST web services, flash/flex remoting support see the [Railo docs for web.xml config](https://github.com/getrailo/railo/wiki/Configuration:web.xml)
 * The `/lucee/` uri is blocked in `/etc/nginx/lucee.conf` you must add in your ip address and restart nginx.
 * There is no uninstall option
-* This script has been tested on Ubuntu 14.04 LTS only
+* This version of the script has been tested on Ubuntu 16.04 LTS only
 
 
 Setting up a Virtual Host
