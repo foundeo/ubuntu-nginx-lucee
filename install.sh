@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #configuration options
-export LUCEE_VERSION="5.2.3.35"
+export LUCEE_VERSION="5.2.4.37"
 export JVM_MAX_HEAP_SIZE="512m"
 
 #set these two variables if you want to use an oracle JVM, instead of openjdk
