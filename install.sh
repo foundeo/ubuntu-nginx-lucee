@@ -5,8 +5,8 @@ export LUCEE_VERSION="5.2.4.37"
 export JVM_MAX_HEAP_SIZE="512m"
 
 #set these two variables if you want to use an oracle JVM, instead of openjdk
-export JVM_FILE="server-jre-8u144-linux-x64.tar.gz"
-export JVM_VERSION="1.8.0_144"
+export JVM_FILE="server-jre-8u152-linux-x64.tar.gz"
+export JVM_VERSION="1.8.0_152"
 
 
 #root permission check
