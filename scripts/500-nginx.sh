@@ -39,7 +39,10 @@ rm /etc/nginx/sites-enabled/default
 echo "Adding our default site"
 ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
-
+if [[ $WHITELIST_IP ]];then
+    echo "Granting $WHITELIST_IP access to /lucee"
+    sed -i "s/#allow 10.0.0.10/allow $WHITELIST_IP/g" /etc/nginx/lucee.conf
+fi
 
 
 service nginx restart

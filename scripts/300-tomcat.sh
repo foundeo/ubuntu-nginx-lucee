@@ -33,6 +33,14 @@ else
   curl --location -o /opt/lucee/current/mod_cfml-valve_v1.1.05.jar https://raw.githubusercontent.com/utdream/mod_cfml/master/java/mod_cfml-valve_v1.1.05.jar
 fi
 
+MODCFML_JAR_SHA256="22c769ccead700006d53052707370c5361aabb9096473f92599708e614dad638"
+if [[ $(sha256sum "/opt/lucee/current/mod_cfml-valve_v1.1.05.jar") =~ "$MODCFML_JAR_SHA256" ]]; then
+    echo "Verified mod_cfml-valve_v1.1.05.jar SHA-256: $MODCFML_JAR_SHA256"
+else
+    echo "SHA-256 Checksum of mod_cfml-valve_v1.1.05.jar verification failed"
+    exit 1
+fi
+
 if [ ! -f /opt/lucee/modcfml-shared-key.txt ]; then
   echo "Generating Random Shared Secret..."
   openssl rand -base64 42 >> /opt/lucee/modcfml-shared-key.txt

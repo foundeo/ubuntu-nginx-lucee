@@ -19,4 +19,14 @@ else
   exit 1
 fi
 
+if [[ $LUCEE_JAR_SHA256 ]];then
+    echo "Verifying SHA-256 checksum"
+    if [[ $(sha256sum "/opt/lucee/$jar_folder/lucee.jar") =~ "$LUCEE_JAR_SHA256" ]]; then
+        echo "Verified lucee.jar SHA-256: $LUCEE_JAR_SHA256"
+    else
+        echo "SHA-256 Checksum of lucee.jar verification failed"
+        exit 1
+    fi
+fi
+
 ln -s /opt/lucee/$jar_folder /opt/lucee/current
