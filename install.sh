@@ -2,8 +2,12 @@
 
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.2.4.37"
-    export LUCEE_JAR_SHA256="24a82c596a8bb39403548b4315d1d6cbacf71966bd42835be6e061fa86d410bb"
+    export LUCEE_VERSION="5.2.5.20"
+    export LUCEE_JAR_SHA256="2f0efdcc2f9f8d1d3f781a81f9e81fa983e52671e6db26d8c02457e27f482146"
+fi
+
+if [[ $LUCEE_LIGHT ]];then
+    export LUCEE_JAR_SHA256="220133b0aca4e9fc57058fc62320a6b977fc1ec2fdd7860b6c30c4bb9e58de44"
 fi
 
 if [[ !$JVM_MAX_HEAP_SIZE ]];then

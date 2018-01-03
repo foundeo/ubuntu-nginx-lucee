@@ -1,6 +1,9 @@
 #!/bin/bash
 
 jar_url="http://cdn.lucee.org/rest/update/provider/loader/$LUCEE_VERSION"
+if [[ $LUCEE_LIGHT ]];then
+    jar_url="http://cdn.lucee.org/rest/update/provider/light/$LUCEE_VERSION"
+fi
 jar_folder="lucee-$LUCEE_VERSION"
 
 echo "Installing Lucee"
