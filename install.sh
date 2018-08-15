@@ -2,12 +2,12 @@
 
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.2.6.59"
-    export LUCEE_JAR_SHA256="44d61500b4a23b77a9541cabf344c0355b3cce313e5877906d857b071a343d75"
+    export LUCEE_VERSION="5.2.8.50"
+    export LUCEE_JAR_SHA256="90f05e511ba68cf91706aeb78c6ebf096e04ee066153e59c976129a2b99a9661"
 fi
 
 if [[ $LUCEE_LIGHT ]];then
-    export LUCEE_JAR_SHA256="d3950596856d4db09adce1316b60dac590572783607992252c8061a9af632b11"
+    export LUCEE_JAR_SHA256="8858a9698ead76a638a44fd4d4275dc6ecd1a84d0236f1acf9c7b8746ee329b1"
 fi
 
 if [[ !$JVM_MAX_HEAP_SIZE ]];then
@@ -16,8 +16,8 @@ fi
 
 #set JVM_FILE and JVM_VERSION if you want to use an oracle JVM, instead of openjdk
 if [[ !$JVM_FILE ]]; then
-    export JVM_FILE="server-jre-8u162-linux-x64.tar.gz"
-    export JVM_VERSION="1.8.0_162"
+    export JVM_FILE="server-jre-8u181-linux-x64.tar.gz"
+    export JVM_VERSION="1.8.0_181"
 fi
 
 
