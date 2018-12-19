@@ -2,7 +2,7 @@
 
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.2.8.50"
+    export LUCEE_VERSION="5.2.9.31"
     export LUCEE_JAR_SHA256="90f05e511ba68cf91706aeb78c6ebf096e04ee066153e59c976129a2b99a9661"
 fi
 
@@ -16,8 +16,8 @@ fi
 
 #set JVM_FILE and JVM_VERSION if you want to use an oracle JVM, instead of openjdk
 if [[ !$JVM_FILE ]]; then
-    export JVM_FILE="server-jre-8u181-linux-x64.tar.gz"
-    export JVM_VERSION="1.8.0_181"
+    export JVM_FILE="server-jre-8u192-linux-x64.tar.gz"
+    export JVM_VERSION="1.8.0_192"
 fi
 
 
