@@ -3,11 +3,11 @@
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
     export LUCEE_VERSION="5.2.9.31"
-    export LUCEE_JAR_SHA256="90f05e511ba68cf91706aeb78c6ebf096e04ee066153e59c976129a2b99a9661"
+    export LUCEE_JAR_SHA256="ac263d9f78cc201bb6e8b68c7aeb93d033b09beac89470e97f88319e12058c26"
 fi
 
 if [[ $LUCEE_LIGHT ]];then
-    export LUCEE_JAR_SHA256="8858a9698ead76a638a44fd4d4275dc6ecd1a84d0236f1acf9c7b8746ee329b1"
+    export LUCEE_JAR_SHA256="a229f7c22c7114691f77db2c5f186ff7e0875bd737caed29edfe238c1be63c9a"
 fi
 
 if [[ !$JVM_MAX_HEAP_SIZE ]];then
