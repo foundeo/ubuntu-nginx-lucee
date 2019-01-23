@@ -1,19 +1,11 @@
 #!/bin/bash
 
 #install commandbox
-#note that you can also add commandbox to apt sources.list allowing you to update using apt-get
-#
-curl -o commandbox_3.9.2-1_all.deb https://downloads.ortussolutions.com/debs/noarch/commandbox_3.9.2-1_all.deb
-COMMANDBOX_SHA256="0c8ae277e91390a180b43bc3f1f091754e1e83b2f552f06cc595591853bf9cac"
+echo "Installing CommandBox"
 
-if [[ $(sha256sum commandbox_3.9.2-1_all.deb) =~ "$COMMANDBOX_SHA256" ]]; then
-    echo "Verified commandbox SHA-256: $COMMANDBOX_SHA256"
-else
-    echo "SHA-256 Checksum of commandbox failed"
-    exit 1
-fi
-
-dpkg -i commandbox_3.9.2-1_all.deb
+curl -fsSl https://downloads.ortussolutions.com/debs/gpg | sudo apt-key add -
+echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a /etc/apt/sources.list.d/commandbox.list
+sudo apt-get update && sudo apt-get install commandbox
 
 box install commandbox-cfconfig
 
