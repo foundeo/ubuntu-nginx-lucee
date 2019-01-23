@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+    ubuntu-nginx-lucee:
+        build: .
+        ports:
+            - "8099:8080"
+            - "8180:80"
