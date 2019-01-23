@@ -4,7 +4,7 @@
 #note that you can also add commandbox to apt sources.list allowing you to update using apt-get
 #
 curl -o commandbox_3.9.2-1_all.deb https://downloads.ortussolutions.com/debs/noarch/commandbox_3.9.2-1_all.deb
-COMMANDBOX_SHA256="0c8ae277e91390a180b43bc3f1f091754e1e83b2f552f06cc595591853bf9cac"
+COMMANDBOX_SHA256="157aef93c83ab30b78a5b7fd0bbf38ea7a54dcb12deca0049c09d81b14ad460e"
 
 if [[ $(sha256sum commandbox_3.9.2-1_all.deb) =~ "$COMMANDBOX_SHA256" ]]; then
     echo "Verified commandbox SHA-256: $COMMANDBOX_SHA256"
