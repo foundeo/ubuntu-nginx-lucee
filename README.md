@@ -1,6 +1,8 @@
 ubuntu-nginx-lucee
 ==================
 
+[![Build Status](https://travis-ci.org/foundeo/ubuntu-nginx-lucee.svg?branch=master)](https://travis-ci.org/foundeo/ubuntu-nginx-lucee)
+
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
 Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat8`
 
