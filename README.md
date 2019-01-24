@@ -88,6 +88,10 @@ If you don't need Lucee/CFML for a given site, simply omit the `include lucee.co
 		root /web/img.example.com/wwwroot/;
 	}
 
+Create the symbolic link in sites-enabled to enable the site:
+
+	sudo ln -s /etc/nginx/sites-available/me.example.com.conf /etc/nginx/sites-enabled/
+
 After making changes you need to restart or reload nginx:
 
 	sudo service nginx restart
