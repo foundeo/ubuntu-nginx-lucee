@@ -4,4 +4,4 @@ echo "Updating Ubuntu Software"
 apt-get update
 apt-get upgrade
 
-apt-get install unzip curl apt-transport-https
+apt-get install unzip curl apt-transport-https gnupg
