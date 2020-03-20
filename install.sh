@@ -2,7 +2,7 @@
 
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.3.2.77"
+    export LUCEE_VERSION="5.3.4.80"
 fi
 
 #if [[ $LUCEE_LIGHT ]];then
