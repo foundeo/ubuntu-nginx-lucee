@@ -1,13 +1,15 @@
 #!/bin/bash
 
-chmod a+x /tmp/install.sh
-cd /tmp/
+cd "$(dirname "$0")"
+
+chmod a+x ./install.sh
+
 
 #assume yes to all apt-get commands
 echo 'APT::Get::Assume-Yes "true";' >> /etc/apt/apt.conf.d/90assumeyes
 export DEBIAN_FRONTEND=noninteractive
 
-/tmp/install.sh
+./install.sh
 
 sleep 5
 
@@ -28,7 +30,6 @@ cat /tmp/result.txt
 
 echo -e "\n-----\n"
 
-sleep 500000
 
 if [ "$http_code" -ne 200 ]; then
 	#fail if status code is not 200
