@@ -9,3 +9,5 @@ services:
         environment:
             - IN_DOCKER=1
             - DEBUG_SLEEP=1
+            - SKIP_UBUNTU_UPDATE=1
+            - SKIP_UBUNTU_UPGRADE=1

@@ -37,7 +37,7 @@ fi
 echo -e "\n-----\n"
 
 #test nginx setup
-cp /etc/nginx/sites-available//example.com.conf /etc/nginx/sites-enabled/example.com.conf 
+cp /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/example.com.conf 
 service nginx reload
 echo "<cfheader statuscode='418' statustext='teapot'><cfoutput>Lucee #server.lucee.version#</cfoutput>" > /web/example.com/wwwroot/test.cfm 
 
