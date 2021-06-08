@@ -11,8 +11,6 @@ export DEBIAN_FRONTEND=noninteractive
 
 ./install.sh
 
-sleep 5
-
 if [[ $IN_DOCKER ]];then
     #systemd doesn't work in docker, so start manually
     export CATALINA_HOME=/usr/share/tomcat9
@@ -21,7 +19,10 @@ if [[ $IN_DOCKER ]];then
     export JAVA_OPTS=-Djava.awt.headless=true
     apt install sudo
     sudo -u tomcat cd $CATALINA_HOME ; /usr/libexec/tomcat9/tomcat-start.sh &
+
 fi
+
+sleep 10
 
 http_code=$(curl --verbose  -o /tmp/result.txt -w '%{http_code}' 'http://127.0.0.1:8080/lucee/admin/web.cfm';)
 echo "Finished with Status: $http_code "
@@ -63,6 +64,7 @@ cat /var/log/tomcat9/*.log
 
 if [[ $DEBUG_SLEEP ]];then
     apt install vim
+    echo "DEBUG SLEEPING: docker exec -it ID /bin/bash to debug container"
     sleep 50000
 fi
 
