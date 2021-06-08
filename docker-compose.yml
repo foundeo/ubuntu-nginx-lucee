@@ -6,3 +6,5 @@ services:
         ports:
             - "8099:8080"
             - "8180:80"
+        environment:
+            - IN_DOCKER=1

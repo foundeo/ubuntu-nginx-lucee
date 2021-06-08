@@ -30,7 +30,6 @@ jobs:
       - name: Run / test install
         run: |
           cat /etc/debian_version
-          sudo chmod a+x $GITHUB_WORKSPACE/install.sh
-          sudo $GITHUB_WORKSPACE/install.sh
+          sudo chmod a+x $GITHUB_WORKSPACE/test.sh
           sudo $GITHUB_WORKSPACE/test.sh
           
