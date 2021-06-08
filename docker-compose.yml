@@ -8,3 +8,4 @@ services:
             - "8180:80"
         environment:
             - IN_DOCKER=1
+            - DEBUG_SLEEP=1

@@ -26,12 +26,27 @@ http_code=$(curl --verbose  -o /tmp/result.txt -w '%{http_code}' 'http://127.0.0
 echo "Finished with Status: $http_code "
 echo -e "\n-----\n"
 #output the result
-cat /tmp/result.txt
+if [ -f "/tmp/result.txt" ]; then
+  cat /tmp/result.txt
+else
+  echo "Result file did not exist"
+  http_code=0
+fi
+
 
 echo -e "\n-----\n"
 
+#output logs for debugging
+cat /var/log/nginx/*.log 
+cat /var/log/tomcat9/*.log
+
+if [[ $DEBUG_SLEEP ]];then
+    sleep 50000
+fi
 
 if [ "$http_code" -ne 200 ]; then
-	#fail if status code is not 200
+	
+
+    #fail if status code is not 200
     exit 1
 fi
