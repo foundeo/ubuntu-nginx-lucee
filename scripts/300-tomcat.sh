@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing Tomcat 9"
-apt-get install tomcat9
+apt-get install tomcat9 openjdk-11-jdk-headless
 
 echo "Configuring Tomcat"
 
