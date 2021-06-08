@@ -19,6 +19,7 @@ if [[ $IN_DOCKER ]];then
     export CATALINA_BASE=/var/lib/tomcat9
     export CATALINA_TMPDIR=/tmp
     export JAVA_OPTS=-Djava.awt.headless=true
+    apt install sudo
     sudo -u tomcat cd $CATALINA_HOME ; /usr/libexec/tomcat9/tomcat-start.sh &
 fi
 
@@ -61,6 +62,7 @@ cat /var/log/nginx/*.log
 cat /var/log/tomcat9/*.log
 
 if [[ $DEBUG_SLEEP ]];then
+    apt install vim
     sleep 50000
 fi
 
