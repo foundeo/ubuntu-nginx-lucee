@@ -25,7 +25,8 @@ jobs:
       # Runs / tests install
       - name: Run / test install
         run: |
-          chmod a+x $GITHUB_WORKSPACE/install.sh
-          $GITHUB_WORKSPACE/install.sh
-          $GITHUB_WORKSPACE/test.sh
+          cat /etc/debian_version
+          sudo chmod a+x $GITHUB_WORKSPACE/install.sh
+          sudo $GITHUB_WORKSPACE/install.sh
+          sudo $GITHUB_WORKSPACE/test.sh
           
