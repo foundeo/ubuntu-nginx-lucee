@@ -1,5 +1,6 @@
 # FOR TESTING
-FROM ubuntu:18.04
+FROM ubuntu:20.04
+RUN echo testing1
 COPY . /tmp/
 RUN chmod a+x /tmp/test.sh
 CMD /tmp/test.sh

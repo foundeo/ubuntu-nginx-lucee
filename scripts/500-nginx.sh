@@ -24,8 +24,8 @@ echo "<!doctype html><html><body><h1>Hello</h1></body></html>" > $web_root/defau
 
 
 
-#add tomcat8 to www-data group so it can read files
-usermod -aG www-data tomcat8
+#add user tomcat to www-data group so it can read files
+usermod -aG www-data tomcat
 
 #set the web directory permissions
 chown -R root:www-data $web_root

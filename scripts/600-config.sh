@@ -22,4 +22,4 @@ box cfconfig set adminPassword=$ADMIN_PASSWORD to=/opt/lucee/config/server/lucee
 box cfconfig set adminPasswordDefault=$ADMIN_PASSWORD to=/opt/lucee/config/server/lucee-server/ toFormat=luceeServer@5
 
 #restart to apply changes
-service tomcat8 restart
+service tomcat9 restart

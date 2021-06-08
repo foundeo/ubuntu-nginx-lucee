@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+
+<!-- =====================  Servlets ========================= -->
+
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- DISABLE JSP
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>fork</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>xpoweredBy</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    -->
+
+    <!-- ===================================================================== -->
+    <!-- Lucee CFML Servlet - this is the main servlet                   -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <servlet id="Lucee">
+      <description>Lucee CFML Engine</description>
+      <servlet-name>CFMLServlet</servlet-name>
+      <servlet-class>lucee.loader.servlet.CFMLServlet</servlet-class>
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- to specify the location of the Lucee Server config and libraries,   -->
+      <!-- uncomment the init-param below.  make sure that the param-value     -->
+      <!-- points to a valid folder, and that the process that runs Lucee has  -->
+      <!-- write permissions to that folder.  leave commented for defaults.    -->
+
+      <init-param>
+        <param-name>lucee-server-directory</param-name>
+        <param-value>/opt/lucee/config/server/</param-value>
+        <description>Lucee Server configuration directory (for Server-wide configurations, settings, and libraries)</description>
+      </init-param>
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- to specify the location of the Web Contexts' config and libraries,  -->
+      <!-- uncomment the init-param below.  make sure that the param-value     -->
+      <!-- points to a valid folder, and that the process that runs Lucee has  -->
+      <!-- write permissions to that folder.  the {web-context-label} can be   -->
+      <!-- set in Lucee Server Admin homepage.  leave commented for defaults.  -->
+
+      <init-param>
+        <param-name>lucee-web-directory</param-name>
+        <param-value>/opt/lucee/config/web/{web-context-label}/</param-value>
+        <description>Lucee Web Directory (for Website-specific configurations, settings, and libraries)</description>
+      </init-param>
+
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+
+
+
+  <!-- ================  Servlet Mappings ========================= -->
+
+    <!-- The mapping for the default servlet -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- The mappings for the JSP servlet
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+    -->
+
+
+    <!-- Mappings for the Lucee servlet -->
+    <servlet-mapping>
+        <servlet-name>CFMLServlet</servlet-name>
+        <url-pattern>*.cfm</url-pattern>
+        <url-pattern>*.cfml</url-pattern>
+        <url-pattern>*.cfc</url-pattern>
+        <!-- Basic SES Mappings -->
+        <url-pattern>/index.cfc/*</url-pattern>
+        <url-pattern>/index.cfm/*</url-pattern>
+        <url-pattern>/index.cfml/*</url-pattern>
+    </servlet-mapping>
+
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+
+  <!-- ===================== Default MIME Type Mappings =================== -->
+
+    <mime-mapping>
+        <extension>pdf</extension>
+        <mime-type>application/pdf</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>png</extension>
+        <mime-type>image/png</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>zip</extension>
+        <mime-type>application/zip</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>gif</extension>
+        <mime-type>image/gif</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>jpeg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>jpg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>json</extension>
+        <mime-type>application/json</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>csv</extension>
+        <mime-type>text/csv</mime-type>
+    </mime-mapping>
+
+  <!-- ==================== Default Welcome File List ===================== -->
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.cfm</welcome-file>
+    </welcome-file-list>
+
+</web-app>

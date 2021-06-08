@@ -1,6 +1,8 @@
 #!/bin/bash
 
-LUCEE_VERSION="5.1.1.65"
+LUCEE_VERSION="5.x.y.z"
+
+
 
 jar_url="http://cdn.lucee.org/rest/update/provider/loader/$LUCEE_VERSION"
 jar_folder="lucee-$LUCEE_VERSION"
@@ -37,5 +39,5 @@ fi
 ln -s /opt/lucee/$jar_folder /opt/lucee/current
 
 echo "Setting Permissions on Lucee Folders"
-chown -R tomcat8:tomcat8 /opt/lucee
+chown -R tomcat:tomcat /opt/lucee
 chmod -R 750 /opt/lucee

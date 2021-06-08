@@ -2,7 +2,7 @@
 
 #configuration options
 if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.3.4.80"
+    export LUCEE_VERSION="5.3.7.48"
 fi
 
 #if [[ $LUCEE_LIGHT ]];then
@@ -12,13 +12,6 @@ fi
 if [[ !$JVM_MAX_HEAP_SIZE ]];then
     export JVM_MAX_HEAP_SIZE="512m"
 fi
-
-#set JVM_FILE and JVM_VERSION if you want to use an oracle JVM, instead of openjdk
-if [[ !$JVM_FILE ]]; then
-    export JVM_FILE="server-jre-8u212-linux-x64.tar.gz"
-    export JVM_VERSION="1.8.0_212"
-fi
-
 
 
 #root permission check
