@@ -4,7 +4,7 @@ ubuntu-nginx-lucee
 [![CI](https://github.com/foundeo/ubuntu-nginx-lucee/actions/workflows/ci.yml/badge.svg)](https://github.com/foundeo/ubuntu-nginx-lucee/actions/workflows/ci.yml)
 
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
-Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat8`
+Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat9`
 
 *Important:* The master branch is now using Lucee 5, for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch.
 
@@ -21,7 +21,7 @@ What does it do?
 2. **Downloads Lucee** - uses curl to download lucee jars from BitBucket places jars in `/opt/lucee/current/`
 3. **Installs & Configures Tomcat 8** - runs `apt-get install tomcat8` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.  (Tomcat/Lucee run on port 8080 by default).
 4. **JVM** - in previous versions this step installed an Oracle JVM, but now we just use OpenJDK.
-5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Crates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
+5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Creates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
 6. **Set Default Lucee Admin Password** - uses cfconfig to set the Lucee server context password and default web context password. If environment variable ADMIN_PASSWORD exists that is used, otherwise a random password is set.  
 
 Take a look in the `scripts/` subfolder to see the script for each step.
@@ -29,7 +29,7 @@ Take a look in the `scripts/` subfolder to see the script for each step.
 How do I run it?
 ----------------
 
-1. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
+1. **Download this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/foundeo/ubuntu-nginx-lucee/tarball/master`
 2. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
 3. **Configuration** - You can either Edit the `install.sh` and change any configuration options such as the Lucee Version or JVM version - or you can use environment variables (see below).
 4. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
