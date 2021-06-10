@@ -18,11 +18,11 @@ if [[ $IN_DOCKER ]];then
     export CATALINA_TMPDIR=/tmp
     export JAVA_OPTS=-Djava.awt.headless=true
     apt install sudo
-    sudo -u tomcat cd $CATALINA_HOME ; /usr/libexec/tomcat9/tomcat-start.sh &
+    sudo --user=tomcat --preserve-env --set-home /usr/libexec/tomcat9/tomcat-start.sh &
 
 fi
 
-sleep 10
+sleep 15
 
 http_code=$(curl --verbose  -o /tmp/result.txt -w '%{http_code}' 'http://127.0.0.1:8080/lucee/admin/web.cfm';)
 echo "Finished with Status: $http_code "
@@ -40,8 +40,11 @@ echo -e "\n-----\n"
 
 #test nginx setup
 cp /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/example.com.conf 
-service nginx reload
+service nginx restart
 echo "<cfheader statuscode='418' statustext='teapot'><cfoutput>Lucee #server.lucee.version#</cfoutput>" > /web/example.com/wwwroot/test.cfm 
+
+#warmup hit
+curl --verbose --resolve 'example.com:80:127.0.0.1' http://example.com/test.cfm
 
 nginx_http_code=$(curl --verbose --resolve 'example.com:80:127.0.0.1'  -o /tmp/result.txt -w '%{nginx_http_code}'  'http://example.com/test.cfm';)
 echo "Finished Nginx with Status: $nginx_http_code "
@@ -65,6 +68,7 @@ cat /var/log/tomcat9/*.log
 if [[ $DEBUG_SLEEP ]];then
     apt install vim
     echo "DEBUG SLEEPING: docker exec -it ID /bin/bash to debug container"
+    echo "curl --verbose --resolve 'example.com:80:127.0.0.1' http://example.com/test.cfm"
     sleep 50000
 fi
 

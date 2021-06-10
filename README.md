@@ -6,13 +6,17 @@ ubuntu-nginx-lucee
 A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu. Uses the
 Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat9`
 
-*Important:* The master branch is now using Lucee 5, for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch.
+## Important Note
+
+>The master branch is now using Ubuntu 20.04 (and is currently a bit unstable). For Lucee 5 on Ubuntu 16.04 or 18.04 see the branch [lucee5-ubuntu18](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee5-ubuntu18), for Lucee 4.5 see the [lucee45-ubuntu14](https://github.com/foundeo/ubuntu-nginx-lucee/tree/lucee45-ubuntu14) branch.
 
 Why would I use this instead of the offical Lucee installers?
 -------------------------------------------------------------
 
 * You want to run nginx as your web server
 * You want to update Tomcat via `apt-get`
+
+> Note: when this script was first created Tomcat was part of the `main` repository on Ubuntu, it is now part of `universal` which means it is community updated. I've noticed that it is not getting updated with security patches frequently like it did when it was part of `main`. This means you will still want to keep an eye on (Tomcat Security)[https://tomcat.apache.org/security-9.html]. You can use (HackMyCF)[https://hackmycf.com/] (made by foundeo) to help you monitor when your server needs to be updated. 
 
 What does it do?
 ----------------
