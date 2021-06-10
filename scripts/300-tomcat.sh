@@ -67,3 +67,4 @@ echo "Setting JVM Max Heap Size to " $JVM_MAX_HEAP_SIZE
 echo "JAVA_OPTS=\"\${JAVA_OPTS} -Xmx$JVM_MAX_HEAP_SIZE\"" >> /etc/default/tomcat9
 
 echo "LUCEE_SERVER_DIR=\"/opt/lucee/config/server/\"" >> /etc/default/tomcat9
+echo "LUCEE_BASE_DIR=\"/opt/lucee/config/server/\"" >> /etc/default/tomcat9
