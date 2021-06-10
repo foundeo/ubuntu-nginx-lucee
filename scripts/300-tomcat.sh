@@ -3,6 +3,11 @@
 echo "Installing Tomcat 9"
 apt-get install tomcat9 openjdk-11-jdk-headless
 
+echo "Stopping Tomcat"
+echo `date`
+service tomcat9 stop
+
+
 echo "Configuring Tomcat"
 
 mkdir backup
