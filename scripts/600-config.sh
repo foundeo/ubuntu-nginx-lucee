@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#make request to server to generate context
+curl --verbose http://127.0.0.1:8080/lucee/admin/web.cfm
+
 #install commandbox
 echo "Installing CommandBox"
 
