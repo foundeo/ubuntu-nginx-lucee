@@ -60,6 +60,7 @@ fi
 
 echo -e "\n-----\n"
 
+find /opt/lucee/
 
 #output logs for debugging
 cat /var/log/nginx/*.log 
