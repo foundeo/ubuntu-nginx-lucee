@@ -16,14 +16,14 @@ Why would I use this instead of the offical Lucee installers?
 * You want to run nginx as your web server
 * You want to update Tomcat via `apt-get`
 
-> Note: when this script was first created Tomcat was part of the `main` repository on Ubuntu, it is now part of `universal` which means it is community updated. I've noticed that it is not getting updated with security patches frequently like it did when it was part of `main`. This means you will still want to keep an eye on (Tomcat Security)[https://tomcat.apache.org/security-9.html]. You can use (HackMyCF)[https://hackmycf.com/] (made by foundeo) to help you monitor when your server needs to be updated. 
+> Note: when this script was first created Tomcat was part of the `main` repository on Ubuntu, it is now part of `universal` which means it is community updated. I've noticed that it is not getting updated with security patches frequently like it did when it was part of `main`. This means you will still want to keep an eye on [Tomcat Security](https://tomcat.apache.org/security-9.html). You can use [HackMyCF](https://hackmycf.com/) (made by [foundeo](https://foundeo.com/)) to help you monitor when your server needs to be updated. Even if you use the default lucee installer, you will still need to keep an eye on the version of Tomcat you are running.
 
 What does it do?
 ----------------
 
 1. **Updates Ubuntu** - simply runs `apt-get update` and `apt-get upgrade`
 2. **Downloads Lucee** - uses curl to download lucee jars from BitBucket places jars in `/opt/lucee/current/`
-3. **Installs & Configures Tomcat 8** - runs `apt-get install tomcat8` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.  (Tomcat/Lucee run on port 8080 by default).
+3. **Installs & Configures Tomcat 8** - runs `apt-get install tomcat9` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.  (Tomcat/Lucee run on port 8080 by default).
 4. **JVM** - in previous versions this step installed an Oracle JVM, but now we just use OpenJDK.
 5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Creates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
 6. **Set Default Lucee Admin Password** - uses cfconfig to set the Lucee server context password and default web context password. If environment variable ADMIN_PASSWORD exists that is used, otherwise a random password is set.  
@@ -42,7 +42,7 @@ How do I run it?
 Limitations / Known Issues
 --------------------------
 
-* The servlet definitions and mappings (located in `/etc/tomcat8/web.xml`) are slimmed down, so if you need things like REST web services, flash/flex remoting support see the [Railo docs for web.xml config](https://github.com/getrailo/railo/wiki/Configuration:web.xml)
+* The servlet definitions and mappings (located in `/etc/tomcat9/web.xml`) are slimmed down, so if you need things like REST web services, flash/flex remoting support see the [Railo docs for web.xml config](https://github.com/getrailo/railo/wiki/Configuration:web.xml)
 * The `/lucee/` uri is blocked in `/etc/nginx/lucee.conf` you must add in your ip address and restart nginx.
 * There is no uninstall option
 * This version of the script has been tested on Ubuntu 20.04 LTS only. See the branches of this repository for older versions of Ubuntu / Lucee.
