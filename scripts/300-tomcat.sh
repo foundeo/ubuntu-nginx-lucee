@@ -73,3 +73,12 @@ echo "JAVA_OPTS=\"\${JAVA_OPTS} -Xmx$JVM_MAX_HEAP_SIZE -Dlucee.base.dir=/opt/luc
 
 echo "LUCEE_SERVER_DIR=\"/opt/lucee/config/server/\"" >> /etc/default/tomcat9
 echo "LUCEE_BASE_DIR=\"/opt/lucee/config/server/\"" >> /etc/default/tomcat9
+
+#In Ubuntu 20.04 necessary because ReadWritePaths is defined
+if [ ! -d "/etc/systemd/system/tomcat9.service.d" ] ; then 
+  mkdir /etc/systemd/system/tomcat9.service.d/
+fi
+echo "[Service]" > /etc/systemd/system/tomcat9.service.d/lucee.conf
+echo "ReadWritePaths=/opt/lucee/" >> /etc/systemd/system/tomcat9.service.d/lucee.conf
+
+systemctl daemon-reload && sleep 5
