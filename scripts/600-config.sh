@@ -12,7 +12,7 @@ apt-get update && apt-get install commandbox
 
 box install commandbox-cfconfig
 
-if [[ !$ADMIN_PASSWORD ]]; then
+if [[ "$ADMIN_PASSWORD" == "" ]]; then
     echo "No ADMIN_PASSWORD set, generating a random password and storing it here: /root/lucee-admin-password.txt"
     touch /root/lucee-admin-password.txt
     chown root:root /root/lucee-admin-password.txt
