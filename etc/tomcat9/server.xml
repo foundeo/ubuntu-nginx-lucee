@@ -147,7 +147,7 @@
                 loggingEnabled="false"
                 waitForContext="5"
                 maxContexts="200"
-                timeBetweenContexts="2000"
+                timeBetweenContexts="0"
                 scanClassPaths="false"
                 sharedKey="SHARED-KEY-HERE"
                 />
