@@ -31,18 +31,19 @@ cp etc/tomcat9/catalina.properties /etc/tomcat9/
 
 cp /etc/default/tomcat9 backup/etc/default/tomcat9
 
-echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration"
-if [ -f lib/mod_cfml-valve_v1.1.05.jar ]; then
-  cp lib/mod_cfml-valve_v1.1.05.jar /opt/lucee/current/
+jarName="mod_cfml-valve_v1.1.11.jar"
+echo "Installing mod_cfml Valve for Automatic Virtual Host Configuration ($jarName)"
+if [ -f "lib/$jarName" ]; then
+  cp "lib/$jarName" /opt/lucee/current/
 else
-  curl --location -o /opt/lucee/current/mod_cfml-valve_v1.1.05.jar https://raw.githubusercontent.com/utdream/mod_cfml/master/java/mod_cfml-valve_v1.1.05.jar
+  curl --location -o "/opt/lucee/current/$jarName" "https://raw.githubusercontent.com/viviotech/mod_cfml/master/java/$jarName"
 fi
 
-MODCFML_JAR_SHA256="22c769ccead700006d53052707370c5361aabb9096473f92599708e614dad638"
-if [[ $(sha256sum "/opt/lucee/current/mod_cfml-valve_v1.1.05.jar") =~ "$MODCFML_JAR_SHA256" ]]; then
-    echo "Verified mod_cfml-valve_v1.1.05.jar SHA-256: $MODCFML_JAR_SHA256"
+MODCFML_JAR_SHA256="fa96cfb7d7b416acbfbb8e36e8df016c098ac47d723077547e812b4c4e2e394d"
+if [[ $(sha256sum "/opt/lucee/current/$jarName") =~ "$MODCFML_JAR_SHA256" ]]; then
+    echo "Verified $jarName SHA-256: $MODCFML_JAR_SHA256"
 else
-    echo "SHA-256 Checksum of mod_cfml-valve_v1.1.05.jar verification failed"
+    echo "SHA-256 Checksum of $jarName verification failed"
     exit 1
 fi
 
