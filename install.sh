@@ -1,15 +1,15 @@
 #!/bin/bash
 
 #configuration options
-if [[ !$LUCEE_VERSION ]];then
+if [[ "$LUCEE_VERSION" == "" ]];then
     export LUCEE_VERSION="5.3.7.48"
 fi
 
-#if [[ $LUCEE_LIGHT ]];then
+#if [[ "$LUCEE_LIGHT" == "" ]];then
     #export LUCEE_JAR_SHA256=""
 #fi
 
-if [[ !$JVM_MAX_HEAP_SIZE ]];then
+if [[ "$JVM_MAX_HEAP_SIZE" == "" ]];then
     export JVM_MAX_HEAP_SIZE="512m"
 fi
 
